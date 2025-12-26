@@ -12,7 +12,7 @@
             --navy: #0a1a2f;
             --gold: #b39359;
             --gold-hover: #967a46;
-            --bg-deep: #f0f4f8; /* Fundo levemente mais escuro para contraste */
+            --bg-deep: #f0f4f8;
             --white: #ffffff;
             --text-dark: #1a1a1a;
             --text-light: #555555;
@@ -27,28 +27,27 @@
         .mt-40 { margin-top: 40px; }
         .highlight-text { color: var(--gold); font-weight: 700; }
 
-        /* HEADER */
-        .main-header { background: var(--navy); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        /* HEADER - ATUALIZADO COM NOVA LOGO */
+        .main-header { background: var(--navy); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         .main-header .container { display: flex; align-items: center; justify-content: space-between; }
-        .logo img { height: 40px; }
+        .logo img { height: 60px; width: auto; display: block; } /* Redimensionado para a nova logo */
         .main-nav ul { list-style: none; display: flex; gap: 20px; }
         .main-nav ul li a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .main-nav ul li a:hover { color: var(--gold); }
         .header-cta { background: var(--gold); color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 0.8rem; font-weight: 900; }
         .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-        /* HERO - TEXTO À ESQUERDA, GRÁFICO/ESPAÇO À DIREITA */
+        /* HERO - TÍTULO AMPLIADO E DESTAQUE */
         .hero-section { 
-            min-height: 100vh;
+            min-height: 100vh; 
             background: linear-gradient(90deg, var(--navy) 55%, rgba(10, 26, 47, 0.7) 100%), url('https://images.unsplash.com/photo-1521791136064-7986c2953d18?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 80px;
+            background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 100px;
         }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; width: 100%; }
-        .hero-content { max-width: 700px; }
+        .hero-content { max-width: 800px; }
         
-        /* TÍTULOS SOLICITADOS */
-        .hero-title-top { color: var(--gold); font-size: 1.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; display: block; }
-        .hero-title { font-size: 2.8rem; margin-bottom: 25px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; color: white; }
+        .hero-exclusive-label { color: var(--gold); font-size: 5rem; font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 0.9; margin-bottom: 10px; display: block; letter-spacing: -2px; }
+        .hero-title { font-size: 2.2rem; margin-bottom: 25px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; color: var(--white); font-weight: 400; }
         
         .hero-subtitle { font-size: 1.2rem; margin-bottom: 35px; line-height: 1.6; color: #e0e0e0; }
         .highlight { color: var(--gold); font-weight: 900; }
@@ -58,7 +57,7 @@
 
         /* SEÇÕES PADRÃO */
         .section-padding { padding: 100px 0; }
-        .bg-light-grey { background-color: var(--bg-deep); } /* Ajustado para ser mais escuro */
+        .bg-light-grey { background-color: var(--bg-deep); }
 
         /* SOBRE A FEIRA */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
@@ -116,21 +115,21 @@
         .footer-col a { color: #ccc; text-decoration: none; line-height: 2; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 30px 0; text-align: center; font-size: 0.8rem; opacity: 0.6; }
 
-        /* RESPONSIVIDADE */
+        /* RESPONSIVIDADE MOBILE */
         @media (max-width: 992px) {
+            .hero-exclusive-label { font-size: 3rem; }
+            .hero-title { font-size: 1.5rem; }
             .hero-grid, .usp-grid, .results-grid, .categories-grid, .main-footer .container { grid-template-columns: 1fr; }
-            .hero-section { text-align: left; min-height: auto; padding: 150px 0 100px; background: linear-gradient(180deg, var(--navy) 70%, rgba(10, 26, 47, 0.8) 100%), url('https://images.unsplash.com/photo-1521791136064-7986c2953d18?auto=format&fit=crop&q=80&w=2070'); }
-            .hero-title { font-size: 2.2rem; }
+            .hero-section { text-align: left; height: auto; padding: 150px 0 80px; }
             .mentor-flex { flex-direction: column; padding: 30px; }
-            .mentor-photo { box-shadow: 10px 10px 0 var(--gold); }
             .contact-form { grid-template-columns: 1fr; padding: 30px; }
             .form-group:nth-child(n) { grid-column: span 1; }
-            .header-cta { display: none; } /* Esconde o botão grande no mobile para dar espaço */
             .menu-toggle { display: block; }
-            .main-nav { display: none; width: 100%; position: absolute; top: 100%; left: 0; background: var(--navy); padding: 20px; border-top: 1px solid var(--gold); }
+            .main-nav { display: none; width: 100%; position: absolute; top: 80px; left: 0; background: var(--navy); padding: 20px; border-bottom: 2px solid var(--gold); }
             .main-nav.active { display: block; }
             .main-nav ul { flex-direction: column; gap: 15px; }
-            .hero-visual { display: none; } /* Oculta o gráfico no mobile para focar no texto */
+            .header-cta { display: none; }
+            .hero-visual { display: none; }
         }
     </style>
 </head>
@@ -139,7 +138,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x40/0a1a2f/b39359?text=VaS+CONTINUUM" alt="Logo VaS Continuum">
+                <img src="https://i.imgur.com/bMwuDug.png" alt="VaS Continuum Logo">
             </div>
             <nav class="main-nav" id="mainNav">
                 <ul>
@@ -162,8 +161,9 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <span class="hero-title-top">Convite Exclusivo</span>
+                        <span class="hero-exclusive-label">Convite Exclusivo</span>
                         <h1 class="hero-title">venha fazer parte do time Vas Continuum Canton Fair</h1>
+                        
                         <p class="hero-subtitle">Transforme sua visão em produtos de sucesso e diferencie seu varejo com acesso exclusivo e mentoria especializada na maior feira de negócios do mundo. <span class="highlight">Esta não é uma viagem; é a alavanca para o seu próximo nível.</span></p>
                         <a href="#why-vas" class="btn-secondary">QUERO SABER MAIS!</a>
                         <br>
@@ -246,8 +246,6 @@
         <section id="program" class="section-padding bg-light-grey">
             <div class="container">
                 <h2 class="section-title text-center">O Programa da Viagem: Sua Jornada de Desenvolvimento de Produtos</h2>
-                <p class="section-description text-center">A "Buying Trip VaS Continuum" foi meticulosamente planejada para maximizar seu tempo e garantir o máximo retorno para o seu investimento. Nossos dias serão intensos, produtivos e, acima de tudo, focados na busca por inovação e na construção de um portfólio diferenciado para o seu negócio.</p>
-                
                 <div class="program-table-container">
                     <table class="data-table">
                         <thead>
@@ -258,131 +256,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Dia 1</strong></td>
-                                <td>Chegada e Briefing Estratégico</td>
-                                <td>Alinhamento de objetivos, panorama da feira e dicas para otimizar a visita. Jantar de networking.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dia 2-4</strong></td>
-                                <td>Imersão na Canton Fair (Fase 2)</td>
-                                <td>Exploração guiada das categorias de interesse, identificação de fornecedores, análise de tendências, negociações iniciais.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dia 5</strong></td>
-                                <td>Visita ao Escritório de Sourcing Exclusivo</td>
-                                <td>Reuniões com especialistas em sourcing, discussões sobre logística, controle de qualidade e otimização da cadeia.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dia 6</strong></td>
-                                <td>Sessões de Mentoria e Consolidação</td>
-                                <td>Análise de produtos selecionados, planejamento de próximos passos, estratégias de importação e diferenciação de portfólio.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dia 7</strong></td>
-                                <td>Retorno</td>
-                                <td>Partida com um plano de ação robusto e novas parcerias.</td>
-                            </tr>
+                            <tr><td><strong>Dia 1</strong></td><td>Chegada e Briefing Estratégico</td><td>Alinhamento de objetivos, panorama da feira e dicas para otimizar a visita.</td></tr>
+                            <tr><td><strong>Dia 2-4</strong></td><td>Imersão na Canton Fair (Fase 2)</td><td>Exploração guiada das categorias de interesse e identificação de fornecedores.</td></tr>
+                            <tr><td><strong>Dia 5</strong></td><td>Visita ao Escritório de Sourcing Exclusivo</td><td>Reuniões com especialistas sobre logística e controle de qualidade.</td></tr>
+                            <tr><td><strong>Dia 6</strong></td><td>Sessões de Mentoria e Consolidação</td><td>Análise de produtos selecionados e estratégias de importação.</td></tr>
+                            <tr><td><strong>Dia 7</strong></td><td>Retorno</td><td>Partida com um plano de ação robusto.</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="program-highlight text-center">Cada passo é cuidadosamente orquestrado para que você desenvolva produtos que farão uma diferença competitiva no seu sortimento.</p>
-            </div>
-        </section>
-
-        <section id="results" class="section-padding">
-            <div class="container">
-                <h2 class="section-title text-center">O Que Você Vai Conquistar? Resultados Tangíveis para o Seu Negócio</h2>
-                <p class="section-description text-center">Esta expedição não é apenas uma viagem; é um investimento direto no futuro e na lucratividade do seu negócio. Ao final da "Buying Trip VaS Continuum", você não terá apenas um rol de contatos, mas um plano de ação estratégico e recursos para implementar <strong class="highlight-text">mudanças que geram valor</strong>.</p>
-                
-                <div class="results-grid">
-                    <div class="result-item">
-                        <i class="fas fa-lightbulb icon-medium"></i>
-                        <h3>Portfólio de Produtos Inovador</h3>
-                        <p>Descubra e desenvolva produtos que ninguém mais tem, elevando seu varejo/atacado a um novo patamar de competitividade.</p>
-                    </div>
-                    <div class="result-item">
-                        <i class="fas fa-money-bill-wave icon-medium"></i>
-                        <h3>Otimização Estratégica de Custos</h3>
-                        <p>Aprenda a negociar diretamente com fabricantes e otimize seus custos de importação, melhorando suas margens de lucro.</p>
-                    </div>
-                    <div class="result-item">
-                        <i class="fas fa-warehouse icon-medium"></i>
-                        <h3>Rede de Fornecedores Confiáveis</h3>
-                        <p>Construa relacionamentos sólidos com fornecedores qualificados e auditados, garantindo qualidade e consistência.</p>
-                    </div>
-                    <div class="result-item">
-                        <i class="fas fa-truck-loading icon-medium"></i>
-                        <h3>Conhecimento Prático em Sourcing e Importação</h3>
-                        <p>Adquira insights valiosos sobre todo o processo de importação, do desenvolvimento à entrega.</p>
-                    </div>
-                    <div class="result-item">
-                        <i class="fas fa-chart-line icon-medium"></i>
-                        <h3>Identificação de Tendências Globais</h3>
-                        <p>Antecipe as próximas "ondas" do mercado, posicionando seu negócio à frente da concorrência.</p>
-                    </div>
-                    <div class="result-item">
-                        <i class="fas fa-network-wired icon-medium"></i>
-                        <h3>Networking de Alto Nível</h3>
-                        <p>Conecte-se com outros empresários visionários e compartilhe experiências, ampliando sua rede profissional.</p>
-                    </div>
-                </div>
-
-                <div class="testimonials-section">
-                    <div class="testimonial-card">
-                        <p style="font-size: 1.2rem; font-style: italic;">"Antes da VaS Continuum, a Canton Fair era um labirinto. Com Marcelo, encontrei os fornecedores certos e lancei uma linha de produtos que transformou meu faturamento!"</p>
-                        <span class="testimonial-author">- João Silva, CEO da Varejo Inovador</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p style="font-size: 1.2rem; font-style: italic;">"O acesso ao escritório de sourcing foi um game-changer. É como ter um departamento de importação global na palma da mão, com todo o suporte necessário."</p>
-                        <span class="testimonial-author">- Maria Santos, Diretora de Compras, Atacado Solução</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="categories" class="section-padding bg-light-grey">
-            <div class="container">
-                <h2 class="section-title text-center">Categorias Exploradas: A 2ª Fase da 139ª Edição em Detalhes</h2>
-                <p class="section-description text-center">A 2ª Fase da Canton Fair é um celeiro de inovações, focada em produtos que enriquecem o dia a dia e o lazer. Nosso tema principal é "Better Life".</p>
-                
-                <div class="categories-grid">
-                    <div class="category-main-item">
-                        <i class="fas fa-shopping-basket category-icon"></i>
-                        <h3>1. Consumer Goods (Bens de Consumo)</h3>
-                        <ul>
-                            <li><strong>Itens Domésticos:</strong> Utensílios de Cozinha, Louças, Materiais de Limpeza, Produtos de Armazenamento.</li>
-                            <li><strong>Itens para Festas e Feriados:</strong> Decorações, presentes, árvores de Natal artificiais.</li>
-                            <li><strong>Decoração para Casa:</strong> Vasos, porta-retratos, velas, flores artificiais, ornamentos decorativos.</li>
-                        </ul>
-                    </div>
-                    <div class="category-main-item">
-                        <i class="fas fa-gift category-icon"></i>
-                        <h3>2. Gifts & Premiums (Presentes e Brindes)</h3>
-                        <ul>
-                            <li><strong>Presentes:</strong> Presentes promocionais, brindes corporativos, presentes de metal/madeira/cristal.</li>
-                            <li><strong>Brinquedos (Destaque):</strong> Educativos, STEM, pelúcia, eletrônicos, blocos de montar.</li>
-                            <li><strong>Cerâmica Artística:</strong> Cerâmica decorativa, vasos de arte, estátuas, azulejos esmaltados.</li>
-                        </ul>
-                    </div>
-                    <div class="category-main-item">
-                        <i class="fas fa-home category-icon"></i>
-                        <h3>3. Home, Furniture & Garden</h3>
-                        <ul>
-                            <li><strong>Móveis:</strong> Áreas externas (rattan, ferro), móveis de apoio para interiores.</li>
-                            <li><strong>Produtos para Jardim e Lazer:</strong> Churrasqueiras, barracas, guarda-sóis, equipamentos de irrigação.</li>
-                        </ul>
-                    </div>
-                    <div class="category-main-item">
-                        <i class="fas fa-spa category-icon"></i>
-                        <h3>4. Personal Care & Bathroom</h3>
-                        <ul>
-                            <li><strong>Produtos para Banheiro:</strong> Gabinetes, espelhos, cortinas de chuveiro, toalheiros.</li>
-                            <li><strong>Acessórios de Cuidados:</strong> Pentes, escovas, lâminas de barbear, espelhos de maquiagem.</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-center mt-40 category-conclusion" style="font-weight: bold;">Com a curadoria especializada da VaS Continuum, você terá a clareza necessária para encontrar exatamente o que seu mercado procura.</p>
             </div>
         </section>
 
@@ -394,95 +275,36 @@
                     </div>
                     <div class="mentor-details">
                         <h2 class="section-title">Marcelo Nogueira: Seu Guia Rumo à Excelência em Sourcing</h2>
-                        <p>Conheça o coração e a mente por trás da expedição VaS Continuum. Marcelo Nogueira, CEO e fundador da VaS Continuum, é um estrategista de produto e importação com uma carreira que se estende por mais de duas décadas.</p>
-                        
+                        <p>Marcelo Nogueira, CEO e fundador da VaS Continuum, é um estrategista de produto e importação com uma carreira que se estende por mais de duas décadas.</p>
                         <h3 style="margin: 25px 0 15px; color: var(--gold);">Experiência de Destaque:</h3>
                         <ul style="list-style: none;">
-                            <li style="margin-bottom: 10px;"><i class="fas fa-chevron-right list-icon"></i> <strong>Tok&Stok:</strong> Curadoria e desenvolvimento de produtos de tendência.</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-chevron-right list-icon"></i> <strong>GPA e Casino Group:</strong> Liderança em sourcing de escala massiva.</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-chevron-right list-icon"></i> <strong>Tania Bulhões:</strong> Sourcing para o segmento de luxo e sofisticação.</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-chevron-right list-icon"></i> <strong>Tok&Stok:</strong> Curadoria e desenvolvimento de produtos.</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-chevron-right list-icon"></i> <strong>GPA e Casino Group:</strong> Liderança em sourcing.</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-chevron-right list-icon"></i> <strong>Tania Bulhões:</strong> Sourcing para o segmento de luxo.</li>
                         </ul>
-                        <p style="margin-top: 20px;">Sua vivência abrange tanto a importação direta quanto a indireta, oferecendo uma compreensão 360 graus. Marcelo não apenas guiará você pela feira, mas compartilhará suas táticas de negociação e segredos de mercado.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section-padding bg-light-grey" style="color: var(--navy);">
+        <section id="contact" class="section-padding bg-light-grey">
             <div class="container">
                 <h2 class="section-title text-center">Aja Agora: As Vagas São Limitadas!</h2>
-                <p class="section-description text-center" style="max-width: 800px; margin: 0 auto;">As vagas para a "Buying Trip VaS Continuum" são intencionalmente limitadas para garantir a qualidade. Não deixe para depois o que pode revolucionar sua margem de lucro.</p>
-                
                 <form class="contact-form">
-                    <div class="form-group">
-                        <label>Nome Completo</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail Profissional</label>
-                        <input type="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone (WhatsApp)</label>
-                        <input type="tel" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Nome da Empresa</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Segmento de Atuação</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Mensagem (Quais categorias de produtos mais te interessam?)</label>
-                        <textarea rows="5"></textarea>
-                    </div>
-                    <div class="form-group checkbox-group" style="flex-direction: row; align-items: center; gap: 10px;">
-                        <input type="checkbox" required style="width: auto;">
-                        <label style="margin: 0;">Aceito receber comunicações da VaS Continuum.</label>
-                    </div>
+                    <div class="form-group"><label>Nome Completo</label><input type="text" required></div>
+                    <div class="form-group"><label>E-mail Profissional</label><input type="email" required></div>
+                    <div class="form-group"><label>Telefone (WhatsApp)</label><input type="tel" required></div>
+                    <div class="form-group"><label>Nome da Empresa</label><input type="text" required></div>
+                    <div class="form-group"><label>Segmento de Atuação</label><input type="text" required></div>
+                    <div class="form-group"><label>Mensagem</label><textarea rows="4"></textarea></div>
                     <button type="submit" class="btn-large">QUERO MINHA VAGA E TRANSFORMAR MEU NEGÓCIO!</button>
                 </form>
-
-                <div class="contact-alternatives text-center mt-40">
-                    <p>Prefere falar conosco? <br>WhatsApp: <strong>(11) 99999-9999</strong> | E-mail: <strong>contato@vascontinuum.com.br</strong></p>
-                </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-col">
-                <img src="https://via.placeholder.com/150x40/0a1a2f/b39359?text=VaS+CONTINUUM" alt="Logo VaS Continuum" style="height: 30px; margin-bottom: 20px;">
-                <p style="font-size: 0.85rem; color: #ccc;">Sua parceira estratégica em sourcing global e desenvolvimento de produtos de alta performance.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Links Úteis</h3>
-                <ul>
-                    <li><a href="#about-canton-fair">A Feira</a></li>
-                    <li><a href="#program">O Programa</a></li>
-                    <li><a href="#mentor">Mentoria</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Suporte</h3>
-                <ul>
-                    <li><a href="#">Privacidade</a></li>
-                    <li><a href="#">Termos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Siga-nos</h3>
-                <div style="display: flex; gap: 15px; font-size: 1.2rem;">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
+        <div class="container text-center">
             <p>&copy; 2025 VaS Continuum. Todos os direitos reservados.</p>
         </div>
     </footer>
@@ -492,8 +314,6 @@
             const nav = document.getElementById('mainNav');
             nav.classList.toggle('active');
         }
-
-        // Fecha o menu ao clicar em um link (mobile)
         document.querySelectorAll('.main-nav a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('mainNav').classList.remove('active');
