@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria VIP - Marcelo Nogueira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fff; color: #333; }
+        .portfolio-page { max-width: 900px; margin: 40px auto; border: 1px solid #ddd; box-shadow: 0 0 30px rgba(0,0,0,0.1); padding: 50px; position: relative; }
+        
+        /* CABEÇALHO COM FOTO CIRCULAR */
+        .header-portfolio { text-align: center; border-bottom: 2px solid #b39359; padding-bottom: 30px; margin-bottom: 40px; }
+        .profile-img { 
+            width: 200px; height: 200px; 
+            border-radius: 50%; 
+            border: 5px solid #b39359; 
+            object-fit: cover; 
+            margin-bottom: 20px;
+        }
+        .header-portfolio h1 { font-family: 'Playfair Display', serif; color: #0a1a2f; font-size: 2.5rem; }
+        .header-portfolio p { color: #b39359; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* CONTEÚDO ESTILO PORTFÓLIO */
+        .content-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+        .text-block h3 { color: #0a1a2f; border-left: 4px solid #b39359; padding-left: 10px; margin-bottom: 15px; }
+        .text-block p { margin-bottom: 20px; text-align: justify; font-size: 0.95rem; }
+        
+        .footer-portfolio { margin-top: 50px; background: #0a1a2f; color: white; padding: 20px; text-align: center; }
+        .back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0a1a2f; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 900px; margin: 20px auto;">
+        <a href="index.html" class="back-btn">← Voltar para Início</a>
+    </div>
+
+    <div class="portfolio-page">
+        <div class="header-portfolio">
+            <img src="https://imgur.com/WTlRZNU.png" alt="Marcelo Nogueira" class="profile-img">
+            <h1>Marcelo Nogueira</h1>
+            <p>Mentoria VIP & Estratégia Global</p>
+        </div>
+
+        <div class="content-section">
+            <div class="text-block">
+                <h3>Sobre o Mentor</h3>
+                <p>Com mais de 20 anos de experiência no mercado de varejo e importação, Marcelo Nogueira consolidou sua carreira em grandes players como Tok&Stok e GPA.</p>
+                <p>Seu foco é transformar a complexidade do sourcing internacional em uma vantagem competitiva clara para empresários brasileiros.</p>
+            </div>
+            <div class="text-block">
+                <h3>A Mentoria</h3>
+                <p>Diferente de cursos tradicionais, a mentoria VIP é um acompanhamento "hands-on" durante a Canton Fair.</p>
+                <p>Você terá acesso direto às táticas de negociação e análise de portfólio que apenas décadas de mercado podem proporcionar.</p>
+            </div>
+        </div>
+
+        <div class="footer-portfolio">
+            <p>VaS Continuum - Excelência em Sourcing Global</p>
+        </div>
+    </div>
+</body>
+</html>
