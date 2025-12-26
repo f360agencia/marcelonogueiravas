@@ -4,15 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desbloqueie o Sucesso Global: Canton Fair com VaS Continuum</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* PALETA VaS CONTINUUM */
+        :root {
+            --navy: #0a1a2f;
+            --gold: #b39359;
+            --gold-hover: #967a46;
+            --light-grey: #f4f7f9;
+            --white: #ffffff;
+            --text-dark: #333333;
+        }
+
+        /* RESET E BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3, .btn { font-family: 'Montserrat', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        .bg-light-grey { background-color: var(--light-grey); }
+        .mt-40 { margin-top: 40px; }
+
+        /* HEADER */
+        .main-header { background: var(--navy); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .main-header .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo img { height: 45px; }
+        .main-nav ul { list-style: none; display: flex; gap: 20px; }
+        .main-nav ul li a { color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .main-nav ul li a:hover { color: var(--gold); }
+        .header-cta { font-size: 0.75rem; padding: 10px 15px; }
+        .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        /* BOTÕES */
+        .btn { display: inline-block; padding: 15px 30px; border-radius: 4px; text-decoration: none; font-weight: 900; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-transform: uppercase; border: none; cursor: pointer; }
+        .btn-primary { background: var(--gold); color: white; }
+        .btn-primary:hover { background: var(--gold-hover); transform: scale(1.05); }
+        .btn-secondary { background: var(--navy); color: white; border: 2px solid var(--gold); }
+        .btn-secondary:hover { background: var(--gold); transform: scale(1.05); }
+        .btn-large { width: 100%; font-size: 1.1rem; }
+
+        /* HERO SECTION */
+        .hero-section { 
+            padding-top: 150px; padding-bottom: 100px;
+            background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover; background-position: center; color: white; text-align: center; position: relative;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .hero-title { font-size: 3rem; margin-bottom: 25px; line-height: 1.2; }
+        .hero-subtitle { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
+        .hero-tagline { margin-top: 30px; font-size: 0.9rem; letter-spacing: 2px; color: var(--gold); font-weight: bold; }
+        .highlight { border-bottom: 3px solid var(--gold); }
+
+        /* SECTIONS */
+        .section-title { font-size: 2.2rem; color: var(--navy); margin-bottom: 20px; }
+        .section-description { max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; }
+        .highlight-text { color: var(--gold); }
+
+        /* GRIDS */
+        .features-grid, .usp-grid, .results-grid, .categories-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; 
+        }
+        
+        .feature-item, .usp-item, .result-item, .category-main-item {
+            background: white; padding: 40px 30px; border-radius: 8px; border-top: 5px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .feature-item:hover, .usp-item:hover, .result-item:hover { transform: translateY(-10px); }
+
+        .icon-large, .icon-medium, .category-icon { color: var(--gold); margin-bottom: 20px; display: block; font-size: 3rem; }
+        .icon-medium { font-size: 2.2rem; }
+        
+        /* TABLE */
+        .program-table-container { overflow-x: auto; margin: 40px 0; }
+        .data-table { width: 100%; border-collapse: collapse; background: white; }
+        .data-table thead { background: var(--navy); color: white; }
+        .data-table th, .data-table td { padding: 20px; border: 1px solid #ddd; text-align: left; }
+        .program-highlight { font-weight: bold; color: var(--navy); font-size: 1.2rem; }
+
+        /* TESTIMONIALS */
+        .testimonials-section { margin-top: 60px; }
+        .testimonial-card { background: var(--navy); color: white; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid var(--gold); }
+        .testimonial-author { color: var(--gold); font-weight: bold; margin-top: 10px; }
+
+        /* CATEGORIES */
+        .category-main-item ul { list-style: none; text-align: left; margin-top: 15px; }
+        .category-main-item li { margin-bottom: 10px; font-size: 0.9rem; }
+
+        /* MENTOR */
+        .mentor-flex { display: flex; align-items: center; gap: 50px; }
+        .mentor-image-container img { width: 100%; max-width: 350px; border-radius: 10px; border: 10px solid var(--gold); }
+        .mentor-details ul { list-style: none; margin: 20px 0; }
+        .list-icon { color: var(--gold); margin-right: 10px; }
+
+        /* FORM */
+        .contact-form { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--navy); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Lato', sans-serif; }
+        .checkbox-group { display: flex; align-items: center; gap: 10px; }
+        .text-link { color: var(--gold); font-weight: bold; text-decoration: none; }
+
+        /* FOOTER */
+        .main-footer { background: var(--navy); color: white; padding: 60px 0 0; }
+        .main-footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h3 { color: var(--gold); margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: white; text-decoration: none; opacity: 0.8; }
+        .footer-col ul li a:hover { opacity: 1; color: var(--gold); }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.3s; }
+        .social-icons a:hover { background: var(--gold); transform: translateY(-5px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 25px 0; margin-top: 40px; text-align: center; font-size: 0.8rem; }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.2rem; }
+            .mentor-flex { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 768px) {
+            .main-nav ul { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--navy); flex-direction: column; padding: 20px; }
+            .main-nav ul.active { display: flex; }
+            .menu-toggle { display: block; }
+            .header-cta { display: none; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="https://via.placeholder.com/120x40/005073/FFFFFF?text=VaS+Continuum" alt="Logo VaS Continuum">
+                <img src="https://via.placeholder.com/120x40/0a1a2f/b39359?text=VaS+Continuum" alt="Logo VaS Continuum">
             </div>
             <nav class="main-nav">
                 <ul>
@@ -254,7 +380,7 @@
         <section id="mentor" class="section-padding">
             <div class="container mentor-flex">
                 <div class="mentor-image-container">
-                    <img src="https://via.placeholder.com/300x300?text=Marcelo+Nogueira" alt="Foto de Marcelo Nogueira" class="mentor-photo">
+                    <img src="https://via.placeholder.com/300x300/b39359/0a1a2f?text=Marcelo+Nogueira" alt="Foto de Marcelo Nogueira" class="mentor-photo">
                 </div>
                 <div class="mentor-details">
                     <h2 class="section-title">Marcelo Nogueira: Seu Guia Rumo à Excelência em Sourcing</h2>
@@ -318,7 +444,7 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-col footer-logo">
-                <img src="https://via.placeholder.com/100x30/005073/FFFFFF?text=VaS+Continuum" alt="Logo VaS Continuum">
+                <img src="https://via.placeholder.com/100x30/0a1a2f/b39359?text=VaS+Continuum" alt="Logo VaS Continuum">
             </div>
             <div class="footer-col footer-nav">
                 <h3>Links Rápidos</h3>
