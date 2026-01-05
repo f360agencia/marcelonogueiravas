@@ -82,15 +82,22 @@
         .usp-item { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
         .icon-medium { color: var(--china-red); font-size: 2rem; margin-bottom: 15px; display: block; }
 
-        /* PROGRAMA - AGENDA TABELA */
-        .program-table-container { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 40px 0; border-top: 4px solid var(--china-red); }
+        /* PROGRAMA - AGENDA TABELA (DESTAQUE VISUAL) */
+        .program-section { background-color: var(--bg-deep); border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+        .program-section .section-title { 
+            display: inline-block;
+            border-bottom: 4px solid var(--gold);
+            padding-bottom: 5px;
+        }
+        .program-table-container { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin: 40px 0; border-top: 5px solid var(--china-red); }
         .data-table { width: 100%; border-collapse: collapse; }
-        .data-table th { background: var(--china-red); color: var(--gold); padding: 15px; text-align: left; }
-        .data-table td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
-        .date-cell { font-weight: bold; color: var(--china-red); width: 120px; }
+        .data-table th { background: var(--china-red); color: var(--gold); padding: 18px; text-align: left; text-transform: uppercase; letter-spacing: 1px; }
+        .data-table td { padding: 18px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        .data-table tr:hover { background-color: #fffdfa; }
+        .date-cell { font-weight: bold; color: var(--china-red); width: 140px; }
 
         /* MENTOR */
-        .mentor-flex { display: flex; align-items: center; gap: 60px; background: var(--bg-deep); padding: 50px; border-radius: 10px; border: 1px solid #ddd; }
+        .mentor-flex { display: flex; align-items: center; gap: 60px; background: var(--white); padding: 50px; border-radius: 10px; border: 1px solid #ddd; }
         .mentor-photo { width: 100%; border-radius: 5px; border-bottom: 15px solid var(--china-red); }
         .list-icon { color: var(--gold); margin-right: 10px; }
 
@@ -198,10 +205,12 @@
             </div>
         </section>
 
-        <section id="program" class="section-padding">
+        <section id="program" class="section-padding program-section">
             <div class="container">
-                <h2 class="section-title text-center">Programa da Viagem</h2>
-                <p class="text-center" style="margin-bottom: 30px;"><strong>Nota:</strong> Reunião exclusiva para curadoria e elaboração do plano de ações será realizada antes do embarque.</p>
+                <div class="text-center">
+                    <h2 class="section-title">Programa da Viagem</h2>
+                </div>
+                <p class="text-center" style="margin-top: 20px; margin-bottom: 30px; font-size: 1.1rem;"><strong>Nota:</strong> Reunião exclusiva para curadoria e elaboração do plano de ações será realizada antes do embarque.</p>
                 
                 <div class="program-table-container">
                     <table class="data-table">
@@ -228,7 +237,7 @@
             </div>
         </section>
 
-        <section id="mentor" class="section-padding bg-light-grey">
+        <section id="mentor" class="section-padding">
             <div class="container">
                 <div class="mentor-flex">
                     <div style="flex: 1;">
@@ -277,5 +286,3 @@
 
 </body>
 </html>
-
-
