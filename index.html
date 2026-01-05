@@ -9,7 +9,7 @@
     <style>
         /* CONFIGURAÇÕES GERAIS VaS - PALETA CHINA EXCLUSIVA */
         :root {
-            --china-red: #8b0000; /* Vermelho Escuro/Imperial */
+            --china-red: #660000; /* Vermelho mais escuro/Imperial */
             --gold: #d4af37; /* Dourado Metálico */
             --gold-hover: #b8860b;
             --bg-deep: #f9f4f0;
@@ -31,7 +31,7 @@
         /* HEADER */
         .main-header { background: var(--china-red); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--gold); }
         .main-header .container { display: flex; align-items: center; justify-content: space-between; }
-        .logo img { height: 60px; width: auto; display: block; filter: brightness(0) invert(1); } /* Ajuste para logo branca no fundo vermelho */
+        .logo img { height: 60px; width: auto; display: block; } 
         .main-nav ul { list-style: none; display: flex; gap: 20px; }
         .main-nav ul li a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .main-nav ul li a:hover { color: var(--gold); }
@@ -41,7 +41,7 @@
         /* HERO */
         .hero-section { 
             min-height: 90vh; 
-            background: linear-gradient(90deg, var(--china-red) 45%, rgba(139, 0, 0, 0.8) 100%), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=2070');
+            background: linear-gradient(90deg, var(--china-red) 45%, rgba(102, 0, 0, 0.8) 100%), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=2070');
             background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 100px;
         }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; width: 100%; }
@@ -60,9 +60,19 @@
         .bg-light-grey { background-color: var(--bg-deep); }
         .section-title { color: var(--china-red); margin-bottom: 20px; text-transform: uppercase; }
 
-        /* O QUE É A CANTON FAIR */
-        .canton-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px; }
-        .canton-img { width: 100%; border-radius: 10px; border: 3px solid var(--gold); }
+        /* O QUE É A CANTON FAIR - COM BACKGROUND IMAGEM */
+        .about-canton-hero { 
+            position: relative; 
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://imgur.com/dckV0uD.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        .about-canton-hero .section-title { color: var(--gold); }
+        .canton-text-box { max-width: 900px; margin: 0 auto; }
 
         /* DIFERENCIAIS VaS */
         .usp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 50px; }
@@ -88,7 +98,7 @@
 
         @media (max-width: 992px) {
             .hero-exclusive-label { font-size: 2.2rem; }
-            .hero-grid, .usp-grid, .canton-intro-grid, .contact-form, .mentor-flex { grid-template-columns: 1fr; flex-direction: column; }
+            .hero-grid, .usp-grid, .contact-form, .mentor-flex { grid-template-columns: 1fr; flex-direction: column; }
             .main-nav { display: none; }
         }
     </style>
@@ -98,7 +108,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="https://i.imgur.com/bMwuDug.png" alt="VaS Continuum Logo">
+                <img src="https://imgur.com/VT0i1CZ.png" alt="VaS Continuum Logo">
             </div>
             <nav class="main-nav" id="mainNav">
                 <ul>
@@ -138,21 +148,16 @@
             </div>
         </div>
 
-        <section id="about-canton" class="section-padding">
+        <section id="about-canton" class="about-canton-hero">
             <div class="container">
-                <h2 class="section-title text-center">O que é a Canton Fair</h2>
-                <div class="canton-intro-grid">
-                    <div>
-                        <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.7; color: var(--text-light);">
-                            A Canton Fair é a maior feira multissetorial do planeta, servindo como o termômetro principal do comércio global. Em sua 139ª edição, o evento reúne milhares de fornecedores qualificados e as tecnologias de fabricação mais avançadas do mundo.
-                        </p>
-                        <p style="line-height: 1.7; color: var(--text-light);">
-                            Participar da Canton Fair não é apenas visitar um evento, é ter acesso direto à cadeia de suprimentos que abastece os maiores varejistas do mundo, em um ambiente focado em inovação, escala e competitividade de preço.
-                        </p>
-                    </div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800" alt="Canton Fair Exhibition" class="canton-img">
-                    </div>
+                <div class="canton-text-box">
+                    <h2 class="section-title">O que é a Canton Fair</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.25rem; line-height: 1.8; font-weight: 400;">
+                        A Canton Fair é a maior feira multissetorial do planeta, servindo como o termômetro principal do comércio global. Em sua 139ª edição, o evento reúne milhares de fornecedores qualificados e as tecnologias de fabricação mais avançadas do mundo.
+                    </p>
+                    <p style="font-size: 1.25rem; line-height: 1.8; font-weight: 400;">
+                        Participar da Canton Fair não é apenas visitar um evento, é ter acesso direto à cadeia de suprimentos que abastece os maiores varejistas do mundo, em um ambiente focado em inovação, escala e competitividade de preço.
+                    </p>
                 </div>
             </div>
         </section>
@@ -260,7 +265,7 @@
 
     <footer class="main-footer" style="background: #1a1a1a; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
-            <img src="https://i.imgur.com/bMwuDug.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px;">
+            <img src="https://imgur.com/VT0i1CZ.png" alt="Logo" style="height: 40px; margin-bottom: 20px;">
             <p>&copy; 2026 VaS Continuum. Todos os direitos reservados.</p>
         </div>
     </footer>
