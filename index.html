@@ -29,13 +29,30 @@
         .highlight-text { color: var(--china-red); font-weight: 700; }
 
         /* HEADER */
-        .main-header { background: var(--china-red); padding: 5px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--gold); }
-        .main-header .container { display: flex; align-items: center; justify-content: space-between; }
+        .main-header { 
+            background: var(--china-red); 
+            padding: 10px 0; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            border-bottom: 2px solid var(--gold); 
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+        }
+        .main-header .container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
         
-        /* Ajuste de Logo solicitado */
-        .logo img { height: 60px; width: auto; display: block; transition: 0.3s; padding: 5px 0; } 
+        /* Ajuste de Logo para Máxima Visibilidade */
+        .logo img { 
+            height: 85px; /* Aumentado significativamente */
+            width: auto; 
+            display: block; 
+            transition: 0.3s;
+        } 
         
-        .main-nav ul { list-style: none; display: flex; gap: 20px; }
+        .main-nav ul { list-style: none; display: flex; gap: 20px; align-items: center; }
         .main-nav ul li a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .main-nav ul li a:hover { color: var(--gold); }
         .header-cta { background: var(--gold); color: var(--china-red); padding: 12px 25px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 900; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -44,11 +61,10 @@
         .hero-section { 
             min-height: 85vh; 
             background: linear-gradient(90deg, var(--china-red) 45%, rgba(74, 0, 0, 0.8) 100%), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 100px;
+            background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 130px; /* Aumentado devido ao header maior */
         }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; width: 100%; }
         .hero-content { max-width: 850px; } 
-        /* Título em 2 linhas e Subtítulo em 1 linha */
         .hero-exclusive-label { color: var(--gold); font-size: 3.2rem; font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 15px; display: block; max-width: 700px; }
         .hero-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; color: var(--white); font-weight: 400; letter-spacing: 1px; white-space: nowrap; }
         
@@ -111,8 +127,9 @@
             .hero-title { white-space: normal; font-size: 1.4rem; }
             .hero-grid, .usp-grid, .contact-form, .mentor-flex { grid-template-columns: 1fr; flex-direction: column; }
             .main-nav { display: none; }
-            .logo img { height: 50px; }
-            .hero-section { padding-top: 100px; }
+            .logo img { height: 60px; }
+            .main-header { min-height: 80px; }
+            .hero-section { padding-top: 110px; }
             .btn-large { grid-column: span 1; }
         }
     </style>
@@ -122,7 +139,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <a href="#"><img src="https://imgur.com/l6F0Nr2.png" alt="VaS Continuum Logo"></a>
+                <a href="#"><img src="https://imgur.com/sU2L8VW.png" alt="VaS Continuum Logo"></a>
             </div>
             <nav class="main-nav" id="mainNav">
                 <ul>
@@ -302,7 +319,7 @@
 
     <footer class="main-footer" style="background: #1a1a1a; color: white; padding: 40px 0; text-align: center; border-top: 4px solid var(--gold);">
         <div class="container">
-            <img src="https://imgur.com/l6F0Nr2.png" alt="Logo VaS" style="height: 50px; margin-bottom: 20px;">
+            <img src="https://imgur.com/sU2L8VW.png" alt="Logo VaS" style="height: 70px; margin-bottom: 20px;">
             <p>&copy; 2026 VaS Continuum. Todos os direitos reservados.</p>
         </div>
     </footer>
