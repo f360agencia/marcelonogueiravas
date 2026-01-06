@@ -29,28 +29,29 @@
         .highlight-text { color: var(--china-red); font-weight: 700; }
 
         /* HEADER */
-        .main-header { background: var(--china-red); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--gold); }
+        .main-header { background: var(--china-red); padding: 5px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--gold); }
         .main-header .container { display: flex; align-items: center; justify-content: space-between; }
         
-        /* Ajuste de Logo para maior destaque */
-        .logo img { height: 75px; width: auto; display: block; transition: 0.3s; } 
+        /* Ajuste de Logo solicitado */
+        .logo img { height: 60px; width: auto; display: block; transition: 0.3s; padding: 5px 0; } 
         
         .main-nav ul { list-style: none; display: flex; gap: 20px; }
         .main-nav ul li a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .main-nav ul li a:hover { color: var(--gold); }
         .header-cta { background: var(--gold); color: var(--china-red); padding: 12px 25px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 900; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
         /* HERO */
         .hero-section { 
-            min-height: 90vh; 
+            min-height: 85vh; 
             background: linear-gradient(90deg, var(--china-red) 45%, rgba(74, 0, 0, 0.8) 100%), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 130px;
+            background-size: cover; background-position: center; display: flex; align-items: center; color: white; padding-top: 100px;
         }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; width: 100%; }
-        .hero-content { max-width: 800px; margin-bottom: 50px; } /* Ajuste de diagramação solicitado */
-        .hero-exclusive-label { color: var(--gold); font-size: 3.5rem; font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 15px; display: block; }
-        .hero-title { font-size: 1.8rem; margin-bottom: 25px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; color: var(--white); font-weight: 400; letter-spacing: 1px; }
+        .hero-content { max-width: 850px; } 
+        /* Título em 2 linhas e Subtítulo em 1 linha */
+        .hero-exclusive-label { color: var(--gold); font-size: 3.2rem; font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 15px; display: block; max-width: 700px; }
+        .hero-title { font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; color: var(--white); font-weight: 400; letter-spacing: 1px; white-space: nowrap; }
+        
         .btn-secondary { background: var(--gold); color: var(--china-red); padding: 18px 35px; text-decoration: none; font-weight: 900; border-radius: 4px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
         .btn-secondary:hover { background: #fff; color: var(--china-red); }
 
@@ -63,7 +64,7 @@
         .bg-light-grey { background-color: var(--bg-deep); }
         .section-title { color: var(--china-red); margin-bottom: 20px; text-transform: uppercase; }
 
-        /* O QUE É A CANTON FAIR - COM BACKGROUND IMAGEM */
+        /* O QUE É A CANTON FAIR */
         .about-canton-hero { 
             position: relative; 
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://imgur.com/dckV0uD.png'); 
@@ -79,39 +80,40 @@
 
         /* DIFERENCIAIS VaS */
         .usp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 50px; }
-        .usp-item { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
+        .usp-item { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); display: flex; flex-direction: column; }
+        .usp-item h3 { margin-bottom: 10px; font-size: 1.4rem; color: var(--china-red); }
+        .usp-item p { font-size: 0.95rem; line-height: 1.6; color: var(--text-light); }
         .icon-medium { color: var(--china-red); font-size: 2rem; margin-bottom: 15px; display: block; }
 
-        /* PROGRAMA - AGENDA TABELA (DESTAQUE VISUAL) */
+        /* PROGRAMA */
         .program-section { background-color: var(--bg-deep); border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
-        .program-section .section-title { 
-            display: inline-block;
-            border-bottom: 4px solid var(--gold);
-            padding-bottom: 5px;
-        }
-        .program-table-container { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin: 40px 0; border-top: 5px solid var(--china-red); }
+        .program-table-container { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin-top: 40px; border-top: 5px solid var(--china-red); }
         .data-table { width: 100%; border-collapse: collapse; }
         .data-table th { background: var(--china-red); color: var(--gold); padding: 18px; text-align: left; text-transform: uppercase; letter-spacing: 1px; }
         .data-table td { padding: 18px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
-        .data-table tr:hover { background-color: #fffdfa; }
         .date-cell { font-weight: bold; color: var(--china-red); width: 140px; }
+        .program-note { margin-top: 30px; padding: 20px; background: #fff; border-left: 5px solid var(--gold); font-size: 1.1rem; line-height: 1.6; }
 
         /* MENTOR */
-        .mentor-flex { display: flex; align-items: center; gap: 60px; background: var(--white); padding: 50px; border-radius: 10px; border: 1px solid #ddd; }
+        .mentor-flex { display: flex; align-items: flex-start; gap: 60px; background: var(--white); padding: 50px; border-radius: 10px; border: 1px solid #ddd; }
         .mentor-photo { width: 100%; border-radius: 5px; border-bottom: 15px solid var(--china-red); }
         .list-icon { color: var(--gold); margin-right: 10px; }
 
         /* FORMULÁRIO */
         .contact-form { background: var(--china-red); padding: 50px; border-radius: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: white; }
-        .form-group label { color: var(--gold); margin-bottom: 8px; font-weight: bold; }
-        .btn-large { background: var(--gold); color: var(--china-red); border: none; padding: 20px; font-weight: 900; cursor: pointer; text-transform: uppercase; grid-column: span 2; }
+        .form-group label { color: var(--gold); margin-bottom: 8px; font-weight: bold; display: block; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: 4px; border: none; font-family: 'Lato', sans-serif; }
+        .btn-large { background: var(--gold); color: var(--china-red); border: none; padding: 20px; font-weight: 900; cursor: pointer; text-transform: uppercase; grid-column: span 2; font-size: 1.1rem; transition: 0.3s; }
+        .btn-large:hover { background: var(--white); }
 
         @media (max-width: 992px) {
             .hero-exclusive-label { font-size: 2.2rem; }
+            .hero-title { white-space: normal; font-size: 1.4rem; }
             .hero-grid, .usp-grid, .contact-form, .mentor-flex { grid-template-columns: 1fr; flex-direction: column; }
             .main-nav { display: none; }
-            .logo img { height: 60px; }
+            .logo img { height: 50px; }
             .hero-section { padding-top: 100px; }
+            .btn-large { grid-column: span 1; }
         }
     </style>
 </head>
@@ -120,13 +122,13 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="https://imgur.com/yIVppmM.png" alt="VaS Continuum Logo">
+                <a href="#"><img src="https://imgur.com/l6F0Nr2.png" alt="VaS Continuum Logo"></a>
             </div>
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="#hero">Início</a></li>
                     <li><a href="#about-canton">Canton Fair</a></li>
-                    <li><a href="#differentials">Diferenciais VaS</a></li>
+                    <li><a href="#differentials">Diferenciais</a></li>
                     <li><a href="#program">Programação</a></li>
                     <li><a href="#mentor">Marcelo Nogueira</a></li>
                     <li><a href="#contact">Inscrição</a></li>
@@ -141,9 +143,8 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <span class="hero-exclusive-label">Comitiva VaS 2026 para a Canton Fair</span>
-                        <h1 class="hero-title">venha fazer parte da expedição VaS</h1>
-                        <p style="font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6;">Uma jornada estratégica de sourcing e desenvolvimento de produtos com apoio da consultoria de quem entende o mercado global.</p>
+                        <span class="hero-exclusive-label">Comitiva VaS 2026 para a<br>Canton Fair</span>
+                        <h1 class="hero-title">uma jornada estratégica de sourcing e consultoria global</h1>
                         <a href="#about-canton" class="btn-secondary">CONHEÇA A EXPEDIÇÃO</a>
                     </div>
                 </div>
@@ -177,29 +178,29 @@
         <section id="differentials" class="section-padding bg-light-grey">
             <div class="container">
                 <h2 class="section-title text-center">Diferenciais VaS Continuum</h2>
-                <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--text-light);">
-                    Navegar pela China exige estratégia. A VaS Continuum transforma uma visita técnica em um plano de negócios estruturado.
+                <p class="text-center" style="max-width: 850px; margin: 0 auto 40px; color: var(--text-light); font-size: 1.1rem;">
+                    Fazer negócios na China exige planejamento e estratégia. A VaS Continuum transforma sua visita técnica em um plano estruturado.
                 </p>
                 <div class="usp-grid">
                     <div class="usp-item">
                         <i class="fas fa-user-check icon-medium"></i>
                         <h3>A Consultoria</h3>
-                        <p>Acompanhamento de nosso CEO Marcelo Nogueira, profissional com quase 30 anos de experiência real em grandes grupos varejistas.</p>
+                        <p>Acompanhamento de nosso CEO Marcelo Nogueira, profissional com quase 30 anos de experiência em global sourcing em grandes grupos varejistas.</p>
                     </div>
                     <div class="usp-item">
                         <i class="fas fa-search-dollar icon-medium"></i>
                         <h3>Curadoria de Produtos</h3>
-                        <p>Foco exclusivo em itens com potencial de margem e diferenciação de mercado. Desenvolva sua marca própria.</p>
+                        <p>Foco em itens com alto potencial de margem e diferenciação. Oportunidade de desenvolvimento de marcas próprias e exclusivas.</p>
                     </div>
                     <div class="usp-item">
                         <i class="fas fa-network-wired icon-medium"></i>
                         <h3>Rede de Contatos (Sourcing)</h3>
-                        <p>Tenha acesso ao escritório de sourcing utilizado pelos maiores varejistas do mundo.</p>
+                        <p>Acesso a escritórios de sourcing mais utilizados pelos maiores varejistas do mundo.</p>
                     </div>
                     <div class="usp-item">
                         <i class="fas fa-clipboard-list icon-medium"></i>
                         <h3>Plano de Ação Exclusivo</h3>
-                        <p>Retorne ao Brasil com um planejamento sólido: cotações, prazos, restrições e fornecedores validados para execução imediata.</p>
+                        <p>Planejamento estruturado no retorno ao Brasil: cotações, prazos, implicações legais e fornecedores validados para execução imediata.</p>
                     </div>
                 </div>
             </div>
@@ -210,7 +211,6 @@
                 <div class="text-center">
                     <h2 class="section-title">Programa da Viagem</h2>
                 </div>
-                <p class="text-center" style="margin-top: 20px; margin-bottom: 30px; font-size: 1.1rem;"><strong>Nota:</strong> Reunião exclusiva para curadoria e elaboração do plano de ações será realizada antes do embarque.</p>
                 
                 <div class="program-table-container">
                     <table class="data-table">
@@ -234,6 +234,10 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="program-note">
+                    <p><strong>Nota importante:</strong> Além da programação da viagem, nossa Consultoria prevê uma reunião de planejamento exclusiva com cada participante, onde serão explorados os interesses, necessidades e peculiaridades de cada empresa.</p>
+                </div>
             </div>
         </section>
 
@@ -246,25 +250,25 @@
                     <div style="flex: 1.5;">
                         <h2 class="section-title">Marcelo Nogueira</h2>
                         <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px;">
-                            Marcelo Nogueira é CEO da VaS Continuum, tem mais de 20 anos de experiência em desenvolvimento de produtos e importações da Ásia, Europa e África, em especial no desenvolvimento de marcas próprias, incluindo Qualitá e Filandek (marcas próprias do Grupo Pão de Açúcar).
+                            <strong>Marcelo Nogueira</strong> é CEO da <strong>VaS Continuum</strong> e possui mais de 20 anos de experiência em desenvolvimento de produtos e importações internacionais, com atuação direta em mercados da <strong>Ásia, Europa e África</strong>. Ao longo de sua trajetória, construiu sólido know-how no desenvolvimento de marcas próprias – como <strong>Qualitá</strong> e <strong>Finlandek</strong>, marcas exclusivas do <strong>Grupo Pão de Açúcar</strong>. 
                         </p>
-                        <p style="line-height: 1.7; color: var(--text-light); margin-bottom: 20px;">
-                            Sua experiência é focada em itens de bazar, casa e cozinha, arrumação e decoração, móveis, ferramentas e automotivo.
+                        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px;">
+                            Sua experiência abrange categorias como <strong>bazar, casa, cozinha, organização, decoração, móveis, ferramentas e automotivo</strong>, combinando visão estratégica de produto e profundo conhecimento da cadeia global de fornecimento. 
                         </p>
-                        <ul style="list-style: none;">
-                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle list-icon"></i> Foi CEO e ainda é sócio da <strong>Tania Bulhões</strong>.</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle list-icon"></i> Foi GMM (General Merchandising Manager) no grupo <strong>GPA / Casino</strong>.</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle list-icon"></i> Foi DMM (Divisional Merchandising Manager) na <strong>Tok&Stok</strong>.</li>
-                        </ul>
+                        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px;">
+                            Foi General Merchandising Manager (GMM) do <strong>Grupo GPA/Casino</strong>, Divisional Merchandising Manager (DDM) na <strong>Tok&Stok</strong> e CEO da <strong>Tania Bulhões</strong>, empresa da qual segue como sócio.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section-padding">
+        <section id="contact" class="section-padding bg-light-grey">
             <div class="container">
-                <h2 class="section-title text-center">Solicite sua Participação</h2>
-                <p class="text-center" style="margin-bottom: 40px; color: var(--text-light);">Vagas limitadas para garantir a qualidade da mentoria e o foco nos resultados de cada participante.</p>
+                <h2 class="section-title text-center">Reserve sua vaga</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--text-light); font-size: 1.1rem;">
+                    Preencha o formulário para saber mais ou reservar a sua vaga. Teremos um grupo seleto para garantir a qualidade do conteúdo e customização das visitas.
+                </p>
                 
                 <form class="contact-form" action="https://formsubmit.co/felipeszoke@f360agencia.com.br" method="POST">
                     <input type="hidden" name="_subject" value="Novo Lead: Comitiva Canton Fair 2026">
@@ -272,37 +276,36 @@
 
                     <div class="form-group">
                         <label>Nome Completo</label>
-                        <input type="text" name="nome" style="width: 100%; padding: 12px; border-radius: 4px; border: none;" required>
+                        <input type="text" name="nome" required>
                     </div>
                     <div class="form-group">
                         <label>E-mail Corporativo</label>
-                        <input type="email" name="email" style="width: 100%; padding: 12px; border-radius: 4px; border: none;" required>
+                        <input type="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label>WhatsApp com DDD</label>
-                        <input type="tel" name="whatsapp" style="width: 100%; padding: 12px; border-radius: 4px; border: none;" required>
+                        <input type="tel" name="whatsapp" required>
                     </div>
                     <div class="form-group">
                         <label>Empresa / Segmento</label>
-                        <input type="text" name="empresa_segmento" style="width: 100%; padding: 12px; border-radius: 4px; border: none;" required>
+                        <input type="text" name="empresa_segmento" required>
                     </div>
                     <div class="form-group" style="grid-column: span 2;">
                         <label>Sua principal meta na China</label>
-                        <textarea name="meta_na_china" rows="4" style="width: 100%; padding: 12px; border-radius: 4px; border: none;"></textarea>
+                        <textarea name="meta_na_china" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn-large">ENVIAR INTERESSE NA COMITIVA</button>
+                    <button type="submit" class="btn-large">ENVIAR FORMULÁRIO</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer" style="background: #1a1a1a; color: white; padding: 40px 0; text-align: center;">
+    <footer class="main-footer" style="background: #1a1a1a; color: white; padding: 40px 0; text-align: center; border-top: 4px solid var(--gold);">
         <div class="container">
-            <img src="https://imgur.com/jmMDUjQ.png" alt="Logo" style="height: 60px; margin-bottom: 20px;">
+            <img src="https://imgur.com/l6F0Nr2.png" alt="Logo VaS" style="height: 50px; margin-bottom: 20px;">
             <p>&copy; 2026 VaS Continuum. Todos os direitos reservados.</p>
         </div>
     </footer>
 
 </body>
 </html>
-
